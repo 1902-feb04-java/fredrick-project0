@@ -1,5 +1,4 @@
 'use strict';
-
 document.addEventListener('DOMContentLoaded', () => {
     let searchHeader = document.getElementById('header');
     let searchButton = document.getElementById('search-button');
@@ -10,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 function getCard(){
+    let searchText = document.getElementById('card-text').value;
+    searchText = searchText.replace(' ', '');
     let xhr = new XMLHttpRequest;
     xhr.onreadystatechange = function () {
         if(xhr.readyState===4){
@@ -20,6 +21,6 @@ function getCard(){
             }
         }
     }
-    xhr.open("GET", "https://api.scryfall.com/cards/named?exact=lightningbolt", true);
+    xhr.open("GET", "https://api.scryfall.com/cards/named?exact="+searchText, true);
     xhr.send();
 }
