@@ -3,14 +3,129 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>PlaneSearch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
     <script src="main.js"></script>
 </head>
 <body>
-    <h3 id="header">Welcome</h3>
-    <textarea id="card-text"></textarea>
-    <button id="search-button" type="button">Search</button>
+    <h1 id="header">Add more filters to your search to reduce the number of cards that are found.</h1>
+    <table id="search-table">
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="filter-head">Current Filters:</td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Card Name:</label></td>
+                <td class="col2"><input type="text" id="name-text"></td>
+                <td><button id="name-button" type="button">Add Filter</button></td>
+                <td id="name-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Expansion Name:</label></td>
+                <td class="col2"><select id="expansion-field" class="input-fields">
+                    <option>Alpha (Limited Edition)</option><option>Beta (Limited Edition)</option><option>Unlimited Edition</option><option>Arabian Nights</option>
+                    <option>Antiquities</option><option>Revised Edition</option><option>Legends</option><option>The Dark</option>
+                    <option>Fallen Empires</option><option>Fourth Edition</option><option>Ice Age</option><option>Chronicles</option>
+                    <option>Renaissance</option><option>Homelands</option><option>Alliances</option><option>Mirage</option>
+                    <option>Visions</option><option>Fifth Edition</option><option>Portal</option><option>Weatherlight</option>
+                    <option>Tempest</option><option>Stronghold</option><option>Exodus</option><option>Portal Second Age</option>
+                    <option>Unglued</option><option>Urza's Saga</option><option>Anthologies</option><option>Urza's Legacy</option>
+                    <option>Sixth Edition</option><option>Urza's Destiny</option><option>Portal Three Kingdoms</option><option>Starter 1999</option>
+                    <option>Mercadian Masques</option><option>Battle Royale</option><option>Nemesis</option><option>Starter 2000</option>
+                    <option>Prophecy</option><option>Invasion</option><option>Beatdown</option><option>Planeshift</option>
+                    <option>Seventh Edition</option><option>Apocalypse</option><option>Odyssey</option><option>Deckmasters 2001</option>
+                    <option>Torment</option><option>Judgment</option><option>Onslaught</option><option>Legions</option>
+                    <option>Scourge</option><option>Eighth Edition</option><option>Mirrodin</option><option>Darksteel</option>
+                    <option>Fifth Dawn</option><option>Champions of Kamigawa</option><option>Unhinged</option><option>Betrayers of Kamigawa</option>
+                    <option>Saviors of Kamigawa</option><option>Ninth Edition</option><option>Salvat 2005</option><option>Ravnica: City of Guilds</option>
+                    <option>Guildpact</option><option>Dissension</option><option>Coldsnap</option><option>Time Spiral</option>
+                    <option>Planar Chaos</option><option>Future Sight</option><option>Tenth Edition</option><option>Masters Edition</option>
+                    <option>Lorwyn</option><option>Duel Decks: Elves vs. Goblins</option><option>Morningtide</option><option>Shadowmoor</option>
+                    <option>Eventide</option><option>From the Vault: Dragons</option><option>Masters Edition II</option><option>Shards of Alara</option>
+                    <option>Duel Decks: Jace vs. Chandra</option><option>Conflux</option><option>Duel Decks: Divine vs. Demonic</option><option>Alara Reborn</option>
+                    <option>Magic 2010</option><option>Commander Theme Decks</option><option>From the Vault: Exiled</option><option>Planechase</option>
+                    <option>Masters Edition III</option><option>Zendikar</option><option>Duel Decks: Garruk vs. Liliana</option><option>Premium Deck Series: Slivers</option>
+                    <option>Worldwake</option><option>Duel Decks: Phyrexia vs. The Coalition</option><option>Rise of the Eldrazi</option><option>Deck Builder's Toolkit</option>
+                    <option>Duels of the Planeswalkers</option><option>Archenemy</option><option>Magic 2011</option><option>From the Vault: Relic</option>
+                    <option>Duel Decks: Elspeth vs. Tezzeret</option><option>Scars of Mirrodin</option><option>Magic Online Deck Series</option><option>Premium Deck Series: Fire & Lightning</option>
+                    <option>Momir Basic Event Deck</option><option>Salvat 2011</option><option>Masters Edition IV</option><option>Mirrodin Besieged</option>
+                    <option>Deck Builder's Toolkit 2011</option><option>Duel Decks: Knights vs. Dragons</option><option>New Phyrexia</option><option>Commander</option>
+                    <option>Magic 2012</option><option>From the Vault: Legends</option><option>Duel Decks: Ajani vs. Nicol Bolas</option><option>Innistrad</option>
+                    <option>Premium Deck Series: Graveborn</option><option>Dark Ascension</option><option>Duel Decks: Venser vs. Koth</option><option>Avacyn Restored</option>
+                    <option>Planechase 2012</option><option>Magic 2013</option><option>From the Vault: Realms</option><option>Duel Decks: Izzet vs. Golgari</option>
+                    <option>Return to Ravnica</option><option>Commander's Arsenal</option><option>Duel Decks: Mirrodin Pure vs. New Phyrexia</option><option>Gatecrash</option>
+                    <option>Duel Decks: Sorin vs. Tibalt</option><option>Dragon's Maze</option><option>Modern Masters</option><option>Magic 2014</option>
+                    <option>From the Vault: Twenty</option><option>Duel Decks: Heroes vs. Monsters</option><option>Theros</option><option>Commander 2013</option>
+                    <option>Born of the Gods</option><option>Duel Decks: Jace vs. Vraska</option><option>Journey into Nyx</option><option>Modern Event Deck</option>
+                    <option>Conspiracy</option><option>Vintage Masters</option><option>Magic 2015</option><option>From the Vault: Annihilation</option>
+                    <option>Duel Decks: Speed vs. Cunning</option><option>Khans of Tarkir</option><option>Commander 2014</option><option>Duel Decks Anthology</option>
+                    <option>Fate Reforged</option><option>Duel Decks: Elspeth vs. Kiora</option><option>Dragons of Tarkir</option><option>Tempest Remastered</option>
+                    <option>Modern Masters 2015</option><option>Magic Origins</option><option>From the Vault: Angels</option><option>Duel Decks: Zendikar vs. Eldrazi</option>
+                    <option>Battle for Zendikar</option><option>Zendikar Expeditions</option><option>Commander 2015</option><option>Legendary Cube</option>
+                    <option>Oath of the Gatewatch</option><option>Duel Decks: Blessed vs. Cursed</option><option>Welcome Deck 2016</option><option>Shadows over Innistrad</option>
+                    <option>Eternal Masters</option><option>Eldritch Moon</option><option>From the Vault: Lore</option><option>Conspiracy: Take the Crown</option>
+                    <option>Duel Decks: Nissa vs. Ob Nixilis</option><option>Kaladesh</option><option>Kaladesh Inventions</option><option>Treasure Chests</option>
+                    <option>Commander 2016</option><option>You Make the Cube</option><option>Planechase Anthology</option><option>Aether Revolt</option>
+                    <option>Modern Masters 2017</option><option>Duel Decks: Mind vs. Might</option><option>Welcome Deck 2017</option><option>Amonkhet</option>
+                    <option>Amonkhet Invocations</option><option>Commander Anthology</option><option>Archenemy: Nicol Bolas</option><option>Hour of Devastation</option>
+                    <option>Commander 2017</option><option>Ixalan</option><option>Duel Decks: Merfolk vs. Goblins</option><option>Iconic Masters</option>
+                    <option>Explorers of Ixalan</option><option>From the Vault: Transform</option><option>Unstable</option><option>Rivals of Ixalan</option>
+                    <option>Masters 25</option><option>Duel Decks: Elves vs. Inventors</option><option>Challenger Decks</option><option>Dominaria</option>
+                    <option>Commander Anthology Volume II</option><option>Battlebond</option><option>Signature Spellbook: Jace</option><option>Global Series: Jiang Yanggu & Mu Yanling</option>
+                    <option>Core Set 2019</option><option>Commander 2018</option><option>Guilds of Ravnica Mythic Edition</option><option>Guilds of Ravnica</option>
+                    <option>Spellslinger Starter Kit</option><option>Guilds of Ravnica Guild Kit</option>s<option>Game Night</option><option>Ultimate Masters</option>
+                    <option>Ravnica Allegiance Mythic Edition</option><option>Ravnica Allegiance</option>
+                </select></td>
+                <td><button id="expansion-button" type="button">Add Filter</button></td>
+                <td id="exp-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Colors:</label></td>
+                <td class="col2"><input type="text" id="color-fields"></td>
+                <td><button id="colors-button" type="button">Add Filter</button></td>
+                <td id="color-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Type: </label></td>
+                <td class="col2"><input type="text" id="type-fields"></td>
+                <td><button id="type-button" type="button">Add Filter</button></td>
+                <td id="type-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Subtype:</label></td>
+                <td class="col2"><input type="text" id="subType-fields"></td>
+                <td><button id="subtype-button" type="button">Add Filter</button></td>
+                <td id="subtype-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>CMC:</label></td>
+                <td class="col2"><input type="text" id="cmc-fields"></td>
+                <td><button id="cmc-button" type="button">Add Filter</button></td>
+                <td id="cmc-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Power:</label></td>
+                <td class="col2"><input type="text" id="power-fields"></td>
+                <td><button id="power-button" type="button">Add Filter</button></td>
+                <td id="power-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>Toughness:</label></td>
+                <td class="col2"><input type="text" id="toughness-fields"></td>
+                <td><button id="toughness-button" type="button">Add Filter</button></td>
+                <td id="toughness-filters" class="filters"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="search-button" type="button">Search</button></td>
+                <td></td>
+                <td><button id="reset-button" type="button">Reset Filters</button></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

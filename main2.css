@@ -1,0 +1,17 @@
+body{
+    background-color: #303030;
+    color:white;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+td{
+    border: white 1px solid;
+}
+button{
+    background-color: #8F8F8F;
+    color: white;
+    width: 100px;
+}

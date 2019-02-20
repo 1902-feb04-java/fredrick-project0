@@ -1,0 +1,66 @@
+.col1{
+    text-align: right;
+}
+
+.col2{
+    text-align: right;
+}
+
+#expansion-field{
+    width: 174px;
+}
+
+body{
+    background-color: #303030;
+    color:white;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input[type="text"]{
+    background-color: #222222;
+    color: white;
+}
+
+button{
+    background-color: #8F8F8F;
+    color: white;
+}
+
+select{
+    background-color: #222222;
+    color: white;
+}
+
+html{
+    display: table;
+    margin: auto;
+}
+
+tr{
+    line-height: 200%;
+}
+
+.filters{
+    border: 2px white solid;
+}
+
+#filter-head{
+    text-align: left;
+}
+
+html, body {
+    width: 100%;
+}
+
+table {
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#search-button{
+    width: 175px;
+}
